@@ -1,0 +1,16 @@
+pkgname=master-pdf-editor
+pkgver=4.3.89
+pkgrel=1
+arch=(x86_64)
+depends=(qt5-svg qt5-tools sane)
+source=($pkgname-${pkgver}_qt5.amd64.deb)
+md5sums=(SKIP)
+
+package() {
+  bsdtar -xf data.tar.xz -C $pkgdir/
+  rm $pkgdir/opt/$pkgname-4/masterpdfeditor4.*
+  sed -i 's/Icon=\/opt\/master-pdf-editor-4\//Icon=/g' \
+    $pkgdir/usr/share/applications/masterpdfeditor4.desktop
+  install -d $pkgdir/usr/bin
+  ln -s /opt/$pkgname-4/masterpdfeditor4 $pkgdir/usr/bin/
+}
