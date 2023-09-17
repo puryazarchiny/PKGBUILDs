@@ -1,0 +1,20 @@
+pkgname=code
+pkgver=1.82.2
+_pkgver=1694671812
+pkgrel=1
+arch=(x86_64)
+depends=(
+  alsa-lib at-spi2-core ca-certificates cairo curl dbus expat glib2 glibc gtk3
+  krb5 libdrm libsecret libx11 libxcb libxcomposite libxdamage libxext libxfixes
+  libxkbcommon libxkbfile libxrandr mesa nspr nss pango vulkan-icd-loader xdg-utils
+)
+source=(https://packages.microsoft.com/repos/$pkgname/pool/main/c/$pkgname/${pkgname}_$pkgver-${_pkgver}_amd64.deb)
+md5sums=(SKIP)
+
+package() {
+  bsdtar -xf data.tar.xz -C $pkgdir/
+  install -d $pkgdir/{opt,usr/bin}
+  mv $pkgdir/usr/share/$pkgname/ $pkgdir/opt/
+  sed -i 's/usr\/share/opt/g' $pkgdir/usr/share/applications/*
+  ln -s /opt/$pkgname/bin/$pkgname $pkgdir/usr/bin/
+}
