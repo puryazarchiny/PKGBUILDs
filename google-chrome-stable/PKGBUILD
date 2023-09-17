@@ -1,0 +1,23 @@
+pkgname=google-chrome-stable
+pkgver=117.0.5938.62
+pkgrel=1
+arch=(x86_64)
+depends=(
+  alsa-lib at-spi2-core ca-certificates cairo curl dbus expat glib2 glibc gtk3
+  libcups libdrm libx11 libxcb libxcomposite libxdamage libxext libxfixes libxkbcommon
+  libxrandr mesa nspr nss pango ttf-liberation vulkan-icd-loader wget xdg-utils
+)
+source=(https://dl.google.com/linux/chrome/deb/pool/main/g/$pkgname/${pkgname}_$pkgver-1_amd64.deb)
+md5sums=(SKIP)
+
+package() {
+  bsdtar -xf data.tar.xz -C $pkgdir/
+  for icon in 16x16 24x24 32x32 48x48 64x64 128x128 256x256; do
+    install -Dm644 $pkgdir/opt/google/chrome/product_logo_${icon%x*}.png \
+      $pkgdir/usr/share/icons/hicolor/$icon/apps/google-chrome.png
+  done
+  rm -fr \
+    $pkgdir/etc/ \
+    $pkgdir/opt/google/chrome/cron/ \
+    $pkgdir/opt/google/chrome/product_logo_*.png
+}
