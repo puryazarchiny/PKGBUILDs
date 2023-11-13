@@ -2,7 +2,7 @@
 Install the `base-devel` meta package for the tools to build Arch Linux packages:
 
 ```sh
-sudo pacman -Syu --needed base-devel
+sudo pacman -Syu base-devel
 ```
 
 Clone the repository:
