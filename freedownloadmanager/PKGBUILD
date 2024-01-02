@@ -1,5 +1,5 @@
 pkgname=freedownloadmanager
-pkgver=6.19.1.5263
+pkgver=6.20.0.5510
 pkgrel=1
 arch=(x86_64)
 depends=(ffmpeg openssl xdg-utils)
@@ -8,13 +8,17 @@ md5sums=(SKIP)
 
 package() {
   bsdtar -xf data.tar.xz -C $pkgdir/
+
   install -Dm644 $pkgdir/opt/$pkgname/icon.png \
     $pkgdir/usr/share/icons/hicolor/256x256/apps/$pkgname.png
   rm $pkgdir/opt/$pkgname/icon.png
+
   sed -i 's/\/opt\/freedownloadmanager\/icon/freedownloadmanager/g' \
     $pkgdir/usr/share/applications/$pkgname.desktop
+
   install -d $pkgdir/usr/bin
   ln -s /opt/$pkgname/fdm $pkgdir/usr/bin/
+
   chmod g-w $pkgdir/opt/
   chmod g-w $pkgdir/usr/
   chmod g-w $pkgdir/usr/share/
