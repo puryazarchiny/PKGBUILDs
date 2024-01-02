@@ -1,6 +1,6 @@
 pkgname=code
-pkgver=1.85.0
-_pkgver=1701902998
+pkgver=1.85.1
+_pkgver=1702462158
 pkgrel=1
 arch=(x86_64)
 depends=(
@@ -13,8 +13,12 @@ md5sums=(SKIP)
 
 package() {
   bsdtar -xf data.tar.xz -C $pkgdir/
+
   install -d $pkgdir/{opt,usr/bin}
+
   mv $pkgdir/usr/share/$pkgname/ $pkgdir/opt/
+
   sed -i 's/usr\/share/opt/g' $pkgdir/usr/share/applications/*
+
   ln -s /opt/$pkgname/bin/$pkgname $pkgdir/usr/bin/
 }
