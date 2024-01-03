@@ -1,0 +1,23 @@
+pkgname=nekoray
+pkgver=3.26
+_pkgver=2023-12-09
+pkgrel=1
+arch=(x86_64)
+depends=(qt5-base qt5-tools qt5-svg qt5-x11extras)
+source=(
+  https://github.com/MatsuriDayo/$pkgname/releases/download/$pkgver/$pkgname-$pkgver-${_pkgver}-debian-x64.deb
+  nekoray.desktop
+)
+md5sums=(SKIP SKIP)
+
+package() {
+  bsdtar -xf data.tar.xz -C $pkgdir/
+
+  install -d $pkgdir/usr/{bin,share/pixmaps}
+
+  mv $pkgdir/opt/nekoray/*.png $pkgdir/usr/share/pixmaps/
+
+  ln -s /opt/nekoray/nekoray $pkgdir/usr/bin/
+
+  install -Dm644 $srcdir/nekoray.desktop $pkgdir/usr/share/applications/nekoray.desktop
+}

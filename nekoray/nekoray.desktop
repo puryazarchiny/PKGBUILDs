@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=NekoRay
+Exec=/usr/bin/nekoray -appdata
+Icon=/usr/share/pixmaps/nekoray.png
