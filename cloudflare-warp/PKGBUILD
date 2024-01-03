@@ -8,12 +8,9 @@ md5sums=(SKIP)
 
 package() {
   bsdtar -xf data.tar.gz -C $pkgdir/
-
   mv $pkgdir/bin $pkgdir/usr/
   mv $pkgdir/lib/systemd/system/ $pkgdir/usr/lib/systemd/
-
   rm -fr $pkgdir/{etc,lib}
-
   sed -i 's/bin/usr\/bin/' $pkgdir/usr/lib/systemd/system/warp-svc.service
   sed -i -e 's/graphical/sway/' -e 's/bin/usr\/bin/' $pkgdir/usr/lib/systemd/user/warp-taskbar.service
 }

@@ -13,12 +13,8 @@ md5sums=(SKIP)
 
 package() {
   bsdtar -xf data.tar.xz -C $pkgdir/
-
   install -d $pkgdir/{opt,usr/bin}
-
   mv $pkgdir/usr/share/$pkgname/ $pkgdir/opt/
-
   sed -i 's/usr\/share/opt/g' $pkgdir/usr/share/applications/*
-
   ln -s /opt/$pkgname/bin/$pkgname $pkgdir/usr/bin/
 }

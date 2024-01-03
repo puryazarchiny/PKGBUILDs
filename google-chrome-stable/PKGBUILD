@@ -12,12 +12,10 @@ md5sums=(SKIP)
 
 package() {
   bsdtar -xf data.tar.xz -C $pkgdir/
-
   for icon in 16x16 24x24 32x32 48x48 64x64 128x128 256x256; do
     install -Dm644 $pkgdir/opt/google/chrome/product_logo_${icon%x*}.png \
       $pkgdir/usr/share/icons/hicolor/$icon/apps/google-chrome.png
   done
-
   rm -fr \
     $pkgdir/etc/ \
     $pkgdir/opt/google/chrome/cron/ \
