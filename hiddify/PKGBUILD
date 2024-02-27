@@ -1,0 +1,17 @@
+pkgname=hiddify
+pkgver=0.16.7
+pkgrel=1
+arch=(x86_64)
+depends=(libayatana-appindicator)
+source=(https://github.com/$pkgname/$pkgname-next/releases/download/v$pkgver.dev/Hiddify-Debian-x64.deb)
+md5sums=(SKIP)
+
+package() {
+  bsdtar -xf data.tar.zst -C $pkgdir/
+
+  install -d $pkgdir/{opt,usr/bin}
+
+  mv $pkgdir/usr/share/$pkgname/ $pkgdir/opt/
+
+  ln -s /opt/$pkgname/$pkgname $pkgdir/usr/bin/
+}
