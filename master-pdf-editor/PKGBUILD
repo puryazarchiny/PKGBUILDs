@@ -8,9 +8,12 @@ md5sums=(SKIP)
 
 package() {
   bsdtar -xf data.tar.xz -C $pkgdir/
+
   rm $pkgdir/opt/$pkgname-4/masterpdfeditor4.*
+
   sed -i 's/Icon=\/opt\/master-pdf-editor-4\//Icon=/' \
     $pkgdir/usr/share/applications/masterpdfeditor4.desktop
+
   install -d $pkgdir/usr/bin
   ln -s /opt/$pkgname-4/masterpdfeditor4 $pkgdir/usr/bin/
 }
