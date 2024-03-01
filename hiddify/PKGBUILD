@@ -1,5 +1,5 @@
 pkgname=hiddify
-pkgver=0.16.7
+pkgver=0.16.16
 pkgrel=1
 arch=(x86_64)
 depends=(libayatana-appindicator)
