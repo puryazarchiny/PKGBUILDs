@@ -1,9 +1,9 @@
 pkgname=hiddify
-pkgver=0.17.5
+pkgver=1.1.1
 pkgrel=1
 arch=(x86_64)
 depends=(libayatana-appindicator)
-source=(https://github.com/$pkgname/$pkgname-next/releases/download/v$pkgver.dev/Hiddify-Debian-x64.deb)
+source=(https://github.com/$pkgname/$pkgname-next/releases/download/v$pkgver/Hiddify-Debian-x64.deb)
 md5sums=(SKIP)
 
 package() {
