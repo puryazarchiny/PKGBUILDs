@@ -1,6 +1,0 @@
-[Desktop Entry]
-Type = Application
-Name = NekoRay
-Icon = /usr/share/pixmaps/nekoray.png
-Exec = nekoray -appdata
-Categories = Network
