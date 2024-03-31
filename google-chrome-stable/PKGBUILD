@@ -1,5 +1,5 @@
 pkgname=google-chrome-stable
-pkgver=123.0.6312.58
+pkgver=123.0.6312.86
 pkgrel=1
 arch=(x86_64)
 depends=(
