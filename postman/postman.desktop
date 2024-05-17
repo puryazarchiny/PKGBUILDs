@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type = Application
+Name = Postman
+Icon = postman
+Exec = /opt/postman/Postman
+Categories = Development
