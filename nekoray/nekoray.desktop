@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type = Application
+Name = NekoRay
+Icon = nekoray.png
+Exec = sh -c "/opt/nekoray/nekoray -appdata"
+Categories = Network
