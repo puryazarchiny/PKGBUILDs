@@ -1,19 +1,22 @@
 pkgname=postman
-pkgver=11.0.4
+pkgver=
 pkgrel=1
 arch=(x86_64)
-source=(postman-$pkgver-linux-x64.tar.gz::https://dl.pstmn.io/download/version/$pkgver/linux64 postman.desktop)
+source=(
+  $pkgname-$pkgver-linux-x64.tar.gz::https://dl.pstmn.io/download/version/$pkgver/linux64
+  $pkgname.desktop
+)
 md5sums=(SKIP SKIP)
 
 package() {
   install -d $pkgdir/{opt,usr/bin}
 
-  cp -r Postman/app $pkgdir/opt/postman
+  cp -r Postman/app/ $pkgdir/opt/$pkgname
 
-  install -D $pkgdir/opt/postman/resources/app/assets/icon.png \
-             $pkgdir/usr/share/icons/hicolor/128x128/apps/postman.png
+  install -D $pkgdir/opt/$pkgname/resources/app/assets/icon.png \
+    $pkgdir/usr/share/icons/hicolor/128x128/apps/$pkgname.png
 
-  ln -s /opt/postman/Postman $pkgdir/usr/bin/postman
+  ln -s /opt/$pkgname/Postman $pkgdir/usr/bin/$pkgname
 
-  install -D postman.desktop $pkgdir/usr/share/applications/postman.desktop
+  install -D $pkgname.desktop $pkgdir/usr/share/applications/$pkgname.desktop
 }

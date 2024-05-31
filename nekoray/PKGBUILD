@@ -1,9 +1,12 @@
 pkgname=nekoray
-pkgver=3.26
+pkgver=
 pkgrel=1
 arch=(x86_64)
 depends=(libxcb qt5-base qt5-svg qt5-x11extras)
-source=(https://github.com/MatsuriDayo/$pkgname/releases/download/$pkgver/$pkgname-$pkgver-2023-12-09-debian-x64.deb $pkgname.desktop)
+source=(
+  https://github.com/MatsuriDayo/$pkgname/releases/download/$pkgver/$pkgname-$pkgver-2023-12-09-debian-x64.deb
+  $pkgname.desktop
+)
 md5sums=(SKIP SKIP)
 
 package() {
@@ -12,10 +15,10 @@ package() {
   install -d $pkgdir/usr/{bin,share/icons/hicolor/256x256/apps}
 
   mv $pkgdir/opt/$pkgname/$pkgname.png \
-     $pkgdir/usr/share/icons/hicolor/256x256/apps/
+    $pkgdir/usr/share/icons/hicolor/256x256/apps/
 
   ln -s /opt/$pkgname/$pkgname $pkgdir/usr/bin/
 
   install -D $pkgname.desktop \
-             $pkgdir/usr/share/applications/$pkgname.desktop
+    $pkgdir/usr/share/applications/$pkgname.desktop
 }
