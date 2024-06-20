@@ -3,10 +3,13 @@ pkgver=
 pkgrel=1
 arch=(x86_64)
 source=(
-  $pkgname-$pkgver-linux-x64.tar.gz::https://dl.pstmn.io/download/version/$pkgver/linux64
+  $pkgname-linux-x64.tar.gz::https://dl.pstmn.io/download/version/$pkgver/linux_64
   $pkgname.desktop
 )
-md5sums=(SKIP SKIP)
+md5sums=(
+  SKIP
+  SKIP
+)
 
 package() {
   install -d $pkgdir/{opt,usr/bin}

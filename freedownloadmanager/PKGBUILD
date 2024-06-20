@@ -7,7 +7,7 @@ source=(https://files2.$pkgname.org/6/latest/$pkgname.deb)
 md5sums=(SKIP)
 
 package() {
-  bsdtar -xf data.tar.xz -C $pkgdir/
+  bsdtar -xf data.tar.zst -C $pkgdir/
 
   install -Dm644 $pkgdir/opt/$pkgname/icon.png \
     $pkgdir/usr/share/icons/hicolor/256x256/apps/$pkgname.png
