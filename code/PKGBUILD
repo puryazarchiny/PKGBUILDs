@@ -1,6 +1,6 @@
 pkgname=code
-pkgver=
-_pkgver=
+pkgver=1.91.0
+_pkgver=1719861592
 pkgrel=1
 arch=(x86_64)
 depends=(
