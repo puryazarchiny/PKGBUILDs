@@ -1,0 +1,15 @@
+.window-close {
+  display: none !important;
+}
+
+.window-max-restore {
+  display: none !important;
+}
+
+.window-minimize {
+  display: none !important;
+}
+
+.window-controls-container {
+  width: auto !important;
+}
