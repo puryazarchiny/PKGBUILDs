@@ -1,5 +1,5 @@
 pkgname=postman
-pkgver=11.3.2
+pkgver=11.7.0
 pkgrel=1
 arch=(x86_64)
 source=(
