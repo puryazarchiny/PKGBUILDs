@@ -1,5 +1,5 @@
 pkgname=freedownloadmanager
-pkgver=6.24.0.5818
+pkgver=
 pkgrel=1
 arch=(x86_64)
 depends=(ffmpeg openssl xdg-utils)
