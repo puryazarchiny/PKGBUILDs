@@ -1,0 +1,14 @@
+pkgname=oblivion-desktop
+pkgver=
+pkgrel=1
+arch=(x86_64)
+depends=(gtk3 libnotify libsecret libxss nss util-linux-libs xdg-utils)
+source=(https://github.com/bepass-org/$pkgname/releases/download/v$pkgver/$pkgname-linux-amd64.deb)
+md5sums=(SKIP)
+
+package() {
+  bsdtar -xf data.tar.xz -C $pkgdir/
+
+  install -d $pkgdir/usr/bin
+  ln -s /opt/$pkgname/$pkgname $pkgdir/usr/bin/
+}
