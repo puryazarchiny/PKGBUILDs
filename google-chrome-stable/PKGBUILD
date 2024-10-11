@@ -3,9 +3,8 @@ pkgver=
 pkgrel=1
 arch=(x86_64)
 depends=(
-  alsa-lib at-spi2-core ca-certificates cairo curl dbus expat glib2 glibc gtk3
-  libcups libdrm libx11 libxcb libxcomposite libxdamage libxext libxfixes libxkbcommon
-  libxrandr mesa nspr nss pango ttf-liberation vulkan-icd-loader wget xdg-utils
+  alsa-lib at-spi2-core cairo curl gtk3 libdrm mesa
+  nss ttf-liberation vulkan-icd-loader wget xdg-utils
 )
 source=(https://dl.google.com/linux/chrome/deb/pool/main/g/$pkgname/${pkgname}_$pkgver-1_amd64.deb)
 md5sums=(SKIP)
