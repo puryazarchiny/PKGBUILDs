@@ -5,11 +5,9 @@ arch=(x86_64)
 source=(
   $pkgname-linux-x64.tar.gz::https://dl.pstmn.io/download/version/$pkgver/linux_64
   $pkgname.desktop
+  $pkgname.sh
 )
-md5sums=(
-  SKIP
-  SKIP
-)
+md5sums=(SKIP SKIP SKIP)
 
 package() {
   install -d $pkgdir/{opt,usr/bin}
@@ -19,7 +17,7 @@ package() {
   install -D $pkgdir/opt/$pkgname/resources/app/assets/icon.png \
     $pkgdir/usr/share/icons/hicolor/128x128/apps/$pkgname.png
 
-  ln -s /opt/$pkgname/Postman $pkgdir/usr/bin/$pkgname
+  install $pkgname.sh $pkgdir/usr/bin/$pkgname
 
   install -D $pkgname.desktop $pkgdir/usr/share/applications/$pkgname.desktop
 }
